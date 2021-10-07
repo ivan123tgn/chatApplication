@@ -9,6 +9,7 @@ import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AuthModule} from "./auth/auth.module";
+import {CardModule} from "primeng/card";
 
 
 @NgModule({
@@ -22,9 +23,11 @@ import {AuthModule} from "./auth/auth.module";
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireStorageModule,
-    AuthModule.forRoot()
+    AuthModule.forRoot(),
+    CardModule
   ],
   providers: [],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

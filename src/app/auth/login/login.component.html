@@ -1,1 +1,35 @@
-<p>login works!</p>
+<div class="flex w-full grid main-container m-0">
+  <div class="lg:col-7 flex justify-content-center flex-column">
+    <p id="main-header">Hello and welcome to <span class="no-wrap">ChatApp<i class="material-icons chat-icon">chat</i></span>!</p>
+    <p id="sub-header">Please, login to continue</p>
+  </div>
+  <div class="lg:col-5 flex justify-content-center align-items-center">
+    <p-card class="input-box flex flex-column">
+
+      <span class="p-input">
+        <input class="p-inputtext-lg" type="email" pInputText placeholder="E-mail" [(ngModel)]="email" />
+      </span>
+
+      <span class="p-input-icon-right mt-5">
+        <i class="pi pi-eye-slash" *ngIf="hidePassword" (click)="passwordVisibilityChange()"></i>
+        <i class="pi pi-eye" *ngIf="!hidePassword" (click)="passwordVisibilityChange()"></i>
+        <input class="p-inputtext-lg" [type]="hidePassword ? 'password' : 'text'" pInputText placeholder="Password" [(ngModel)]="password" />
+      </span>
+
+      <button pButton pRipple label="Sign In" class="w-full p-button-lg mt-5"></button>
+
+      <div class="mt-4 text-center">
+        <a>Forgotten Password?</a>
+      </div>
+
+      <hr class="mt-4">
+
+      <button pButton pRipple type="button" label="Create New Account" class="p-button-success p-button-lg w-full mt-4"></button>
+
+    </p-card>
+  </div>
+</div>
+<app-footer></app-footer>
+
+
+
